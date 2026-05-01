@@ -1,0 +1,151 @@
+﻿:root {
+    --bg-dark: #0d0d0d;
+    --panel-grey: #1a1a1a;
+    --accent-orange: #ff6000;
+    --text-muted: #888;
+    --border-grey: #333;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Rejilla de fondo */
+.grid-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(var(--border-grey) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border-grey) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+header {
+    padding: 20px;
+}
+
+.project-tag {
+    display: inline-block;
+    background: var(--accent-orange);
+    color: black;
+    font-weight: 900;
+    padding: 5px 15px;
+    transform: skewX(-15deg);
+    font-size: 0.7rem;
+}
+
+.hero-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%; /* Margen lateral en PC */
+}
+
+.warning-line {
+    width: 60px;
+    height: 4px;
+    background: var(--accent-orange);
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Tamaño fluido: se ajusta solo */
+    font-weight: 900;
+    max-width: 900px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.orange-text {
+    color: var(--accent-orange);
+}
+
+.info-box {
+    border-left: 3px solid var(--border-grey);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.info-box p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Botón Adaptable */
+.zzz-button {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-orange);
+    text-decoration: none;
+    padding: 18px 30px;
+    font-weight: bold;
+    border: 2px solid var(--accent-orange);
+    text-align: center;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.zzz-button:hover {
+    background: var(--accent-orange);
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 96, 0, 0.4);
+}
+
+.footer {
+    padding: 30px 10%;
+    border-top: 1px solid var(--border-grey);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* --- MEDIA QUERIES PARA MÓVILES --- */
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0 5%; /* Menos margen en celular */
+        justify-content: flex-start;
+        margin-top: 40px;
+    }
+
+    .title {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .info-box {
+        margin-bottom: 30px;
+    }
+
+    .action-area {
+        width: 100%;
+    }
+
+    .zzz-button {
+        width: 100%; /* El botón ocupa todo el ancho en celular */
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .download-info {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px 5%;
+    }
+}
